@@ -34,27 +34,27 @@ export class OrderStack extends cdk.Stack {
       exportName: model + 'TableArn'
     });
 
-    const customerIdIndexName = 'customerId-index';
-    table.addGlobalSecondaryIndex({
-      indexName: customerIdIndexName,
-      partitionKey: { name: 'customerId', type: dynamodb.AttributeType.STRING },
-    });
+    // const customerIdIndexName = 'customerId-index';
+    // table.addGlobalSecondaryIndex({
+    //   indexName: customerIdIndexName,
+    //   partitionKey: { name: 'customerId', type: dynamodb.AttributeType.STRING },
+    // });
 
-    new cdk.CfnOutput(this, 'customerIdIndexArn', {
-      value: table.tableArn + "/index/" + customerIdIndexName,
-      exportName: 'customerIdIndexArn'
-    });
+    // new cdk.CfnOutput(this, 'customerIdIndexArn', {
+    //   value: table.tableArn + "/index/" + customerIdIndexName,
+    //   exportName: 'customerIdIndexArn'
+    // });
 
-    const statusIndexName = 'status-index';
-    table.addGlobalSecondaryIndex({
-      indexName: statusIndexName,
-      partitionKey: { name: 'status', type: dynamodb.AttributeType.STRING },
-    });
+    // const statusIndexName = 'status-index';
+    // table.addGlobalSecondaryIndex({
+    //   indexName: statusIndexName,
+    //   partitionKey: { name: 'status', type: dynamodb.AttributeType.STRING },
+    // });
 
-    new cdk.CfnOutput(this, 'statusIndexArn', {
-      value: table.tableArn + "/index/" + statusIndexName,
-      exportName: 'statusIndexArn'
-    });
+    // new cdk.CfnOutput(this, 'statusIndexArn', {
+    //   value: table.tableArn + "/index/" + statusIndexName,
+    //   exportName: 'statusIndexArn'
+    // });
 
   }
 }
